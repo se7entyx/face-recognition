@@ -22,8 +22,8 @@ RUN apk update && apk add --no-cache \
 COPY . ./
 
 # Install project dependencies\
-RUN pip install tensorflow
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip3 install tensorflow
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup.
 CMD ["gunicorn", "face_recognition:app"]
