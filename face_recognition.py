@@ -6,9 +6,11 @@ import base64
 from sklearn.svm import SVC
 from deepface import DeepFace
 from joblib import dump, load
+from flask_cors import CORS
 import tempfile
 
 app = Flask(__name__)
+CORS(app)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FAKE_PATH = os.path.abspath(os.path.join(BASE_DIR, '..', 'storage', 'app', 'public', 'palsu'))
 
