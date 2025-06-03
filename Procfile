@@ -1,1 +1,1 @@
-web: python face_recognition.py
+web: gunicorn face_recognition:app
