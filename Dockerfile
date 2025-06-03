@@ -8,6 +8,8 @@ ENV PYTHONUNBUFFERED=1
 # Create and change to the app directory.
 WORKDIR /app
 
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+
 # Copy local code to the container image.
 COPY . ./
 
