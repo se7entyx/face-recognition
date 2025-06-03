@@ -8,7 +8,15 @@ ENV PYTHONUNBUFFERED=1
 # Create and change to the app directory.
 WORKDIR /app
 
-RUN apk update && apk add ffmpeg libsm6 libxext6  -y
+# RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+RUN apk update && apk add --no-cache \
+    ffmpeg \
+    libstdc++ \
+    ttf-freefont \
+    mesa-gl \
+    libxext \
+    libsm \
+    libxrender
 
 # Copy local code to the container image.
 COPY . ./
