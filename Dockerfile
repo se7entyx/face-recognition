@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 # Copy local code to the container image.
 COPY . ./
 
-# Install project dependencies
+# Install project dependencies\
+RUN pip install tensorflow
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run the web service on container startup.
